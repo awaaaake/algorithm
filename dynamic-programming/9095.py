@@ -35,19 +35,23 @@
 n=1부터 차례대로 f(n)을 계산해보면 
 f(n)=f(n-1)+f(n-2)+f(n-3)이라는 점화식이 구해진다.
 '''
-n_list=[]
-topdown_memo=[0]*11
-#기저 상태 도달 시, 1,2,4로 초기화
-topdown_memo[1]=1
-topdown_memo[2]=2
-topdown_memo[3]=4
+import sys
+input = sys.stdin.readline
+
+t = int(input())
+dp=11*[0]
+result=[]
+
+dp[1]=1
+dp[2]=2
+dp[3]=4
 
 for i in range(4,11):
-    topdown_memo[i]= sum(topdown_memo[i-3:i])#topdown_memo[i-1]+topdown_memo[i-2]+topdown_memo[i-3]
+    dp[i]=sum(dp[i-3:i])
 
-T=int(input())
-for i in range(T):
-    n_list.append(int(input()))
+for i in range(t):
+    n = int(input())
+    result.append(dp[n])
 
-for n in n_list:
-    print(topdown_memo[n])
+for i in result:
+    print(i)
