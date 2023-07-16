@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 n = int(input())
 
-dp = [[0]* 101 for i in range(n+1)]
+dp = [[0]* 10 for i in range(101)]
 for i in range(10):
     dp[1][i]=1
 
