@@ -1,0 +1,11 @@
+import sys
+input = sys.stdin.readline
+N=int(input())
+data=[]
+for i in range(N):
+    data.append(tuple(map(int, input().split())))
+#map 함수의 반환 값은 map객체 이기 때문에 해당 자료형을 list 혹은 tuple로 형 변환시켜주어야 합니다.
+
+sorted_data=sorted(data, key=lambda x : (x[1], x[0]))
+for x, y in sorted_data:
+    print(x, y)
