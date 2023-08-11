@@ -6,7 +6,7 @@ list=[]
 
 turn=k-1
 
-for _ in range(n):
+for _ in range(n): #while True:µµ °¡´É
     list.append(stack.pop(turn))
     if not stack:
         break
